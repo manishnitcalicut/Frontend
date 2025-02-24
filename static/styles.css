@@ -106,10 +106,10 @@ nav {
     position: relative;
 }
 .hero-img{
-   width: 750px;
-   height: 650px;
+   width: 550px;
+   height: 500px;
    margin-top: 30px;
-   border: rgb(154, 192, 223) solid 30px;
+   border: rgb(154, 192, 223) solid 20px;
    
 }
 .hero-content {
