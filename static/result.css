@@ -1,0 +1,113 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, rgba(0, 153, 255, 0.5), rgba(255, 105, 180, 0.5)); 
+    background-size: cover;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.result-container {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    width: 500px;
+    padding: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #FF1493;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.student-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.student-details p {
+    font-size: 16px;
+    color: #FF1493;
+    margin: 0;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #40E0D0;
+}
+
+td {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+.total, .percentage {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #2f17b3;
+}
+
+.footer {
+    margin-top: 30px;
+}
+
+.footer a {
+    text-decoration: none;
+    background-color: #3b1de4;
+    color: #121212;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer a:hover {
+    background-color: #FF1493;
+    color: #fff;
+    transform: scale(1.05);
+}

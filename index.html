@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Liter&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/vvrs-logo.png') }}" alt="School Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Result</button>
+                    <div class="dropdown-content">
+                        <a href="/login/PT1">PT-1</a>
+                        <a href="/login/PT2">PT-2</a>
+                    </div>
+                </li>
+            </ul>
+            
+            
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="welcome-text">Welcome to</p>
+            <h1 class="hero-title">Vidya Vihar <br> Residential School, Parora</h1>
+            <p class="hero-subtext">This is the result portal of Vidya Vihar Residential School</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">About Us</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/hero-cover-1.png') }}" alt="Student">
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="about" id="about">
+        <h2 id="about-text">ABOUT US</h2>
+        <p id="about-para">Vidya Vihar Residential School is a fully residential school for boys from standard IV to XII and for girls six & onwards. It was the first ISO 9001 certified school of Bihar. The school campus is spread over an estate of 34 Acres in a pollution free, calm and lush green atmosphere conducive to learning and free-thinking. The school building  and various other facilities have been developed well beyond the guidelines of CBSE, New Delhi.  These consist of School Building, Hostels, Mess, Administrative Block, Guest House, Health Care Centre , Staff Quarters  & Auditorium. Sufficient facilities have been created for a rich Library, state of the art Laboratories,  ATL , Outdoor and Indoor Games, Open Air Theatre, Art & Music, Water Supply and Electricity. The school is absolutely cosmopolitan in its outlook and extends the services on the line of a public school and provides a comprehensive and liberal education for children of all communities and states.</p>
+
+        <a href="#about" class="btn btn-primary">Read More</a>
+    </section>
+
+    <!-- Gallery -->
+   
+    <h2 id="about-text">Our Dignitaries</h2>
+    <div class="dignitary-container">
+        <div class="box">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='images/director.avif') }}" alt="Chairman" class="circular-image">
+            </div>
+            <h3 class="designation">Chairman</h3>
+            <div class="image-quote">
+                <img src="{{url_for('static',filename='images/clarity_block-quote-line.png')}}" alt="Quote Image">
+                <p>Empowering students with knowledge, discipline, and vision.</p>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="image-container">
+                <img src="images/vice-chairman.png" alt="Vice Chairman" class="circular-image">
+            </div>
+            <h3 class="designation">Vice Chairman</h3>
+            <div class="image-quote">
+                <img src="images/clarity_block-quote-line.png" alt="Quote Image">
+                <p>More than a school, a journey to wisdom and character.</p>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="image-container">
+                <img src="images/principal.avif" alt="Principal" class="circular-image">
+            </div>
+            <h3 class="designation">Principal</h3>
+            <div class="image-quote">
+                <img src="images/clarity_block-quote-line.png" alt="Quote Image">
+                <p>Shaping young minds in a lush green oasis of knowledge.</p>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="image-container">
+                <img src="images/director.avif" alt="Director" class="circular-image">
+            </div>
+            <h3 class="designation">Director</h3>
+            <div class="image-quote">
+                <img src="images/clarity_block-quote-line.png" alt="Quote Image">
+                <p>A home away from home, where learning meets excellence.</p>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="image-container">
+                <img src="images/administrator.png" alt="Administrator" class="circular-image">
+            </div>
+            <h3 class="designation">Administrator</h3>
+            <div class="image-quote">
+                <img src="images/clarity_block-quote-line.png" alt="Quote Image">
+                <p>Shaping young minds in a lush green oasis of knowledge.</p>
+            </div>
+        </div>
+        
+    </div>
+    <h2 id="about-text">Gallery</h2>
+    <div class="container1">
+        <div class="card1"><img src="{{ url_for('static', filename='gallery/gallery1.jpg') }}" alt="Gallery Image 1"></div>
+        <div class="card1"><img src="{{ url_for('static', filename='gallery/gallery2.jpg') }}" alt="Gallery Image 2"></div>
+        <div class="card1"><img src="{{ url_for('static', filename='gallery/gallery3.jpg') }}" alt="Gallery Image 3"></div>
+        <div class="card1"><img src="{{ url_for('static', filename='gallery/gallery4.jpg') }}" alt="Gallery Image 4"></div>
+    </div>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>CONTACT</h2>
+        <div class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="9b270829-1708-46cd-ab1e-66178fd45ea7">
+            
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+            
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+            
+            <div class="contact-info">
+                <p>📍 Vidya Vihar Residential School, Parora</p>
+                <p>📞 +91 6200064858</p>
+                <p>📧 manishnitcalicut@gmail.com</p>
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.324553463603!2d87.3941925758346!3d25.792864707315946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39effadcbc7fe61f%3A0xbf648adadf2a63fe!2sVidya%20Vihar%20Residential%20School!5e0!3m2!1sen!2sin!4v1739159735350!5m2!1sen!2sin" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe> 
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter">
+                <h2>Subscribe to our newsletter</h2>
+                <p>Be the first to know about our updates</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Email Address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom">
+            <p>&copy; 2023. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
