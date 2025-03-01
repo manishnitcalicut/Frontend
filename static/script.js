@@ -14,3 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+document.getElementById("read-more-btn").addEventListener("click", function () {
+    event.preventDefault();
+    var para = document.getElementById("about-para");
+            
+
+    para.classList.toggle("expanded");
+    this.textContent = para.classList.contains("expanded") ? "Read Less" : "Read More";
+    
+});
+    

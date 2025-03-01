@@ -47,6 +47,7 @@ def get_student_result(roll_number, exam_type):
     # Remove Sanskrit if Hindi has 0 marks
     if subject_marks.get("hindi") == 0:
         result = [(subject, marks) for subject, marks in result if subject.lower() != "hindi"]
+    
 
     # Calculate total marks
     total_marks = sum(marks for _, marks in result)
