@@ -135,7 +135,7 @@
             </tr>
             {% for subject, marks in results %}
             <tr>
-                <td>{{ subject }}</td>
+                <td>{{ subject.title() }}</td>
                 <td>{{ marks }}</td>
             </tr>
             {% endfor %}

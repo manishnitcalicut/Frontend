@@ -379,24 +379,54 @@ nav {
 p{
     font-size: 14px;
 }
-@media (max-width: 768px) {
-    .box {
-        width: 160px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px #ff6f3c;
-        background-color: white;
-        height: 200px;
-        transition: transform 0.3s ease-in-out;
-    }
-    .box:nth-child(1){
-        height: 250px;
-        width: 200px;
-    }
 
-}
+    @media (max-width: 768px) {
+        .dignitary-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        
+    
+        /* 🔹 Move Secreteary (3rd Box) to the Top */
+        .box:nth-child(3) {
+            order: -1; /* Moves it to the top */
+            width: 200px;
+            height: 250px;
+        }
+    
+        /* 🔹 Director & Principal in One Row */
+        .box:nth-child(2), 
+        .box:nth-child(4) {
+            order: 1;
+            width: calc(50% - 10px);
+            margin-top: 0;
+        }
+    
+        /* 🔹 Joint Director & PRO in One Row */
+        .box:nth-child(1), 
+        .box:nth-child(5) {
+            order: 2;
+            width: calc(50% - 10px);
+            margin-top: 0;
+        }
+        .image-quote img {
+            width: 10px;
+            /* margin-top: 2px; */
+        }
+        p{
+            font-size: 12px;
+        }
+        .designation {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+    
 
 /* Gallery */
 
