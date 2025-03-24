@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More / Read Less</title>
+    <style>
+        .about {
+            text-align: center;
+            padding: 50px;
+            background: url("images/Rectangle4.png") no-repeat center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #about-text {
+            color: #e65c2f;
+            font-size: 50px;
+        }
+
+        #about-para {
+            max-width: 900px;
+            font-family: "Itim", serif;
+            font-size: 20px;
+            text-align: justify;
+            overflow: hidden;
+            max-height: 80px;  /* Initial hidden state */
+            transition: max-height 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        #about-para.expanded {
+            max-height: 500px; /* Expands smoothly */
+        }
+
+        @media (max-width: 768px) {
+            #about-text {
+                font-size: 30px;
+            }
+            #about-para {
+                font-size: 16px;
+            }
+            #about-para.expanded {
+                max-height: 700px; /* Adjust for smaller screens */
+            }
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #e65c2f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #c14b26;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about">
+        <h2 id="about-text">About Us</h2>
+        <p id="about-para">
+            This is a sample paragraph. It is initially short, but when you click "Read More," it expands to reveal the full content.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget urna at arcu dignissim sodales. 
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            More text here to make the expansion effect noticeable. Aliquam erat volutpat. Donec condimentum velit 
+            nec urna tristique, nec efficitur velit fermentum. Nam suscipit tincidunt nisl, nec pellentesque quam tincidunt id.
+        </p>
+        <button id="read-more-btn" class="btn">Read More</button>
+    </div>
+
+    <script>
+        document.getElementById("read-more-btn").addEventListener("click", function () {
+            var para = document.getElementById("about-para");
+            
+            para.classList.toggle("expanded");
+            this.textContent = para.classList.contains("expanded") ? "Read Less" : "Read More";
+
+            // Smooth scroll to keep user at the same place
+            para.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+    </script>
+
+</body>
+</html>

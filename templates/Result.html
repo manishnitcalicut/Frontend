@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="result-container">
+        <!-- Header with Logo and School Name -->
+        <header>
+            <div class="header-left">
+                <img src="{{ url_for('static', filename='images/vvrs-logo.png') }}" alt="School Logo" class="logo">
+            </div>
+            <div class="header-right">
+                <h1>Vidya Vihar Residential School</h1>
+                <p>Parora, Purnia</p>
+            </div>
+        </header>
+
+        <!-- Student Details: Name & Roll No -->
+        <div class="student-info">
+            <p><strong>Name:</strong> {{ student[1] }}</p>
+            <p><strong>Roll No:</strong> {{ student[0] }}</p>
+        </div>
+
+        <!-- Exam Type -->
+        <div class="exam-type">
+            <h3>Exam: {{ exam_type }}</h3>
+        </div>
+
+        <!-- Marks Table -->
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            {% for subject, marks in results %}
+            <tr>
+                <td>{{ subject.title() }}</td>
+                <td>{{ marks }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Total Marks and Percentage -->
+        <p class="total"><strong>Total Marks:</strong> {{ total_marks }}</p>
+        <p class="percentage"><strong>Percentage:</strong> {{ percentage }}%</p>
+
+        <!-- Performance Comment -->
+        <div class="performance-box">
+            <p class="performance-comment">
+                {% if percentage >= 90 %}
+                    🌟 Excellent Performance! Keep it up! 🌟
+                {% elif percentage >= 80 %}
+                    🎉 Very Good! You are doing great! 🎉
+                {% elif percentage >= 70 %}
+                    👍 Good! A little more effort will make you even better! 👍
+                {% elif percentage >= 60 %}
+                    😊 Fair! Keep practicing and improving! 😊
+                {% else %}
+                    📚 Keep Working Hard! You can do it! 💪
+                {% endif %}
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="/">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

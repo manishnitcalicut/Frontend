@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="content">
+        <h1 class="title">Vidya Vihar Residential School, Parora
+            <div class="aurora">
+                <div class="aurora__item"></div>
+                <div class="aurora__item"></div>
+                <div class="aurora__item"></div>
+                <div class="aurora__item"></div>
+            </div>
+        </h1>
+        <p class="subtitle">Result Portal</p>
+    </div>
+
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration">
+                <h1 class="opacity">LOGIN</h1>
+
+               
+                <form method="POST">
+                    <!-- <label for="roll_number">Roll Number:</label> -->
+                    <input type="text" id="roll_number" name="roll_number" placeholder="ROLL NUMBER" required>
+                    
+                    <!-- <label for="dob">Date of Birth:</label> -->
+                    <input type="date" id="dob" name="dob" placeholder="DATE OF BIRTH" required>
+                    
+                    <input type="submit" value="Login">
+                </form>
+
+                <div class="register-forget opacity">
+                    <a href="/">Home</a>
+                    <a href="/#contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+    </section>
+</body>
+</html>
