@@ -47,3 +47,15 @@
     </section>
 </body>
 </html>
+<!-- Show error if login fails -->
+
+{% if error %}
+<script>
+    // Show alert if there is an error
+    window.onload = function() {
+        alert("{{ error }}");
+    };
+</script>
+{% endif %}
+
+
